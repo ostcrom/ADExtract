@@ -1,0 +1,14 @@
+<config ldapHost="ldap.host.corp" username="CN=LDAPACCOUNT,CN=Users,DC=host,DC=corp" password="LDAPPASSWORD" pageLimit="1000" emailReportTo="daniel.steinke@corp.com">
+	<search name="ADUserExtract" base="ou=people,dc=bnd,dc=corp" filter="(employeeNumber=*)" sortBy="employeeNumber" sortAsc="true">
+		<field required="true">employeeNumber</field>
+		<field>Title</field>
+		<field required="true">Sn</field>
+		<field required="true">Givenname</field>
+		<field required="true">FacilityId</field>
+		<field  regMatch=" " regReplace="" required="true">sAMAccountName</field>
+		<field required="true">mail</field>
+		<field>telephonenumber</field>
+		<field>Description</field>
+		<field default="valid">Validity</field>
+	</search>
+</config>
